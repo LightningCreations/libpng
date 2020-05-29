@@ -37,7 +37,7 @@ include(GNUInstallDirs)
 
 # Allow users to specify location of zlib.
 # Useful if zlib is being built alongside this as a sub-project.
-option(PNG_BUILD_ZLIB "Custom zlib Location, else find_package is used" OFF)
+# option(PNG_BUILD_ZLIB "Custom zlib Location, else find_package is used" OFF)
 
 if(NOT PNG_BUILD_ZLIB)
   find_package(ZLIB REQUIRED)
@@ -555,7 +555,7 @@ if(PNG_STATIC)
   # MSVC doesn't use a different file extension for shared vs. static
   # libs. We are able to change OUTPUT_NAME to remove the _static
   # for all other platforms.
-  if(NOT MSVC)
+  if(NOT WIN32)
     set_target_properties(png_static PROPERTIES
                           OUTPUT_NAME "${PNG_LIB_NAME}"
                           CLEAN_DIRECT_OUTPUT 1)
