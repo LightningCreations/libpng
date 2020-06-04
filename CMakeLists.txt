@@ -42,7 +42,7 @@ include(GNUInstallDirs)
 if(NOT PNG_BUILD_ZLIB)
   find_package(ZLIB REQUIRED)
 endif()
-include_directories(${ZLIB_INCLUDE_DIRS})
+include_directories(${ZLIB_INCLUDE_DIR})
 
 if(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU AND NOT EMSCRIPTEN)
   find_library(M_LIBRARY m)
