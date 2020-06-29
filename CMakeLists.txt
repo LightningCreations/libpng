@@ -45,7 +45,7 @@ endif()
 
 include_directories(${ZLIB_INCLUDE_DIRS})
 
-if(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU AND NOT EMSCRIPTEN)
+if(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU AND NOT EMSCRIPTEN AND NOT MUSL)
   find_library(M_LIBRARY m)
 else()
   # libm is not needed and/or not available.
